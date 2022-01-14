@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +13,14 @@ use App\Http\Controllers\StudentController;
 |
 */
 
- 
-Route::get('/try', [StudentController::class, 'index']);
 
-Route::post('/store', [StudentController::class, 'store'])->name(student.store);
+Route::get('/try', [TeacherController::class, 'index']);
+Route::post('/store', [TeacherController::class, 'store'])->name('teacher.store');
+
+Route::get('/poooh', function () {
+    return view('images.parts');
+});
+
+Route::post('/image/upload', [TodoController::class, 'store'])->name('imageUpload');
+
+
